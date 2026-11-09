@@ -1,12 +1,12 @@
 # MultiplayerSessions
 
-A C++ plugin for Unreal Engine that handles creating, finding, joining, starting, and destroying multiplayer sessions through Steam. It comes with a simple Host/Join menu (`WBP_Menu`) and an optional lobby widget (`WBP_Lobby`).
+A C++ plugin for Unreal Engine that handles creating, finding and joining multiplayer sessions through Steam. It comes with a simple Host/Join menu (`WBP_Menu`) and an optional lobby widget (`WBP_Lobby`).
 
-> **This setup is for Unreal Engine 5.8.** Newer versions may need different plugins, network settings, or build dependencies. Check the docs for your engine version, rebuild the plugin, and test again when upgrading.
+> **This setup is for Unreal Engine 5.8.** Newer versions may need different setup. Check the docs for your engine version, rebuild the plugin, and test again when upgrading.
 
 ## Install
 
-Start with a C++ project and a working Unreal C++ toolchain. A Third Person project is a handy starting point. If you're using a Blueprint-only project, add a C++ class first.
+Start with a C++ project and a working Unreal C++ toolchain. If you're using a Blueprint-only project, add a C++ class first.
 
 Close the editor, then run this from the folder containing your `.uproject`:
 
@@ -19,14 +19,6 @@ You can also download the ZIP. Just make sure the descriptor ends up at:
 ```text
 YourProject/Plugins/MultiplayerSessions/MultiplayerSessions.uplugin
 ```
-
-If your project uses Git, you can use a submodule instead:
-
-```sh
-git submodule add https://github.com/samuelcazetta/MultiplayerSessions.git Plugins/MultiplayerSessions
-```
-
-When cloning a project that already uses the submodule, run `git submodule update --init --recursive`.
 
 Regenerate project files if needed, then build your game's **Development Editor** target from your IDE. Open the editor and check **Edit > Plugins** for **MultiplayerSessions**, **Online Subsystem**, **Online Subsystem Steam**, and **Steam Sockets**. Enable them and restart if prompted.
 
@@ -104,12 +96,6 @@ Use **Get Player Controller** as the widget's **Owning Player**. Set `Menu Setup
 
 If you make your own widget based on `UMenu`, keep the `HostButton` and `JoinButton` names for the C++ bindings.
 
-### Optional lobby controls
-
-Create `WBP_Lobby` for the host's local Player Controller and call `SetupMenu` while the session is `Pending`. Its `StartSessionButton` starts the session and calls `StartMatch()` on the host's `AGameMode`.
-
-Use **Delayed Start** if the lobby should wait for that button, and handle player spawning/possession in your game as needed. The widget doesn't include a replicated ready system or automatic travel to another gameplay map.
-
 ## Package and try it out
 
 1. Add `StartupMap`, `Lobby`, and any gameplay maps to your packaging/cooking settings.
@@ -122,6 +108,6 @@ The session filter currently uses `ProjectId=MPP` in `MultiplayerSessionsSubsyst
 
 ## Credits and docs
 
-Setup instructions are adapted from [Druid Mechanics' Multiplayer Plugin guide](https://publish.obsidian.md/druid-mechanics/Druid+Mechanics+Patreon+Vault/Updates/Multiplayer+Plugin), with widget names adjusted for this copy. This isn't an official Druid Mechanics release.
+Setup instructions are adapted from [Druid Mechanics' Multiplayer Plugin guide](https://publish.obsidian.md/druid-mechanics/Druid+Mechanics+Patreon+Vault/Updates/Multiplayer+Plugin).
 
 For engine-specific details, see Epic's [Online Subsystem Steam](https://dev.epicgames.com/documentation/en-us/unreal-engine/online-subsystem-steam-interface-in-unreal-engine) and [Steam Sockets](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-steam-sockets-in-unreal-engine) docs.
