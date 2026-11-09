@@ -1,0 +1,44 @@
+# Unreal Engine: compiled binaries and generated files
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+
+# IDE state and generated project files
+.vs/
+.idea/
+.vscode/
+*.sln
+*.slnx
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.csproj
+*.csproj.user
+.vsconfig
+
+# Local Steam runtime configuration
+steam_appid.txt
+
+# Local secrets, logs and temporary files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.log
+*.tmp
+*.bak
+*.dmp
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
