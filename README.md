@@ -1,5 +1,6 @@
 # MultiplayerSessions
 ![Human Written](https://img.shields.io/badge/Code-Human%20Written-brightgreen)
+![NO AI](https://img.shields.io/badge/NO-AI-brightgreen?style=flat-square)
 
 A C++ plugin for Unreal Engine that handles creating, finding and joining multiplayer sessions through Steam. It comes with a simple Host/Join menu (`WBP_Menu`) and an optional lobby widget (`WBP_Lobby`).
 
